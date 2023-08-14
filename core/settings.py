@@ -84,7 +84,7 @@ DATABASES = {
         "PORT": "5433",
         "OPTIONS": {
                     'options': '-c search_path=blog_db'
-                },
+                 },
     }
 }
 
