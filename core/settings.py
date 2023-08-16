@@ -80,7 +80,7 @@ DATABASES = {
         "NAME": "blog",
         "USER": "postgres",
         "PASSWORD": "ecio3246",
-        "HOST": "192.168.1.103",
+        "HOST": "192.168.1.100",
         "PORT": "5433",
         "OPTIONS": {
                     'options': '-c search_path=blog_db'

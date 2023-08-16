@@ -1,10 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'blog/base.html' %}
 
-</body>
-</html>
+{% block content %}
+<div class="container">
+    <h1 class="my-4">Bem-vindo ao Blog</h1>
+
+    {% for post in posts %}
+    <div class="post mb-4">
+        <h2>
+            <a href="{% url 'post_detail' post.id %}">{{ post.title }}</a>
+        </h2>
+        <p class="text-muted">
+            Publicado em {{ post.date_published|date:"d/m/Y" }} por {{ post.author }}
+        </p>
+        <p>{{ post.description|truncatechars:200 }}</p>
+        <a href="{% url 'post_detail' post.id %}" class="btn btn-primary">Leia mais</a>
+    </div>
+    <hr>
+    {% endfor %}
+</div>
+{% endblock %}
